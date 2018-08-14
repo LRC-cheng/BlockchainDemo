@@ -107,7 +107,7 @@ num_of_blocks= 20
 x=0
 
 lock = threading.RLock()    #创建 可重入锁
-lock2 = threading.RLock()    #创建 可重入锁
+
 blockchain = [create_genesis_block()]
 previous_block = blockchain[0]
 
@@ -115,7 +115,7 @@ previous_block = blockchain[0]
 def main():
     l = []
     for i in range(8):
-        l.append(mythread())    #创建 5 个线程，并把他们放到一个列表中
+        l.append(mythread())    #创建线程，并把他们放到一个列表中
     for i in l:
         i.start()               #开启列表中的所有线程
 
